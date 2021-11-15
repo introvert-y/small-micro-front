@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div class="container">
       <el-button
         style="margin-right: 40px"
         type="text"
@@ -19,8 +19,9 @@
           >
         </span>
       </el-dialog>
+      <router-view />
+
     </div>
-    <router-view />
   </div>
 </template>
 
@@ -46,11 +47,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
 <style>
 .login {
   color: blue;
+}
+</style>
+<style scoped>
+.container {
+  margin-top: var(--header-height);
+  margin-left: var(--navbar-width);
+  transition: all 0.3s;
 }
 </style>

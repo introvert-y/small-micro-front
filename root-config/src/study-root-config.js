@@ -8,7 +8,11 @@ registerApplication({
     ),
   activeWhen: ["/example"],
 });
-
+registerApplication({
+  name: "@study/nav",
+  app: () => System.import("@study/nav"),
+  activeWhen: ["/"]
+});
 registerApplication({
   name: "@study/app1",
   app: () => System.import("@study/app1"),
@@ -19,11 +23,6 @@ registerApplication({
   app: () => System.import("@study/app2"),
   activeWhen: ["/app2"]
 });
-// registerApplication({
-//   name: "@vue-mf/navbar",
-//   app: () => System.import("@vue-mf/navbar"),
-//   activeWhen: ["/navbar"]
-// });
 
 start({
   urlRerouteOnly: true,
