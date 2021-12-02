@@ -17,9 +17,6 @@ import { PageHeader } from "@study/styleguide";
 export default {
   name: 'App',
   components: { PageHeader },
-  created() {
-    console.log('app1111111', window.test_js_isolation)
-  },
 }
 </script>
 

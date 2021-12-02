@@ -6,21 +6,21 @@
     >
       <el-scrollbar style="height: 100%">
         <el-menu
-          default-active="1"
+          :default-active="activeMenu"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
           :collapse="!sidebar.opened"
         >
-          <router-link to="app1">
-            <el-menu-item index="1">
+          <router-link to="/app1">
+            <el-menu-item index="/app1">
               <i class="el-icon-menu"></i>
               <span slot="title">app1</span>
             </el-menu-item>
           </router-link>
 
-          <router-link to="app2">
-          <el-menu-item index="2">
+          <router-link to="/app2">
+          <el-menu-item index="/app2">
             <i class="el-icon-setting"></i>
             <span slot="title">app2</span>
           </el-menu-item>
@@ -55,6 +55,16 @@ export default {
   },
   computed: {
     ...mapGetters(["sidebar"]),
+    activeMenu() {
+      const route = this.$route;
+      const { meta, path } = route;
+      console.log('nav active', path)
+      // if set path, the sidebar will highlight the path you set
+      if (meta.activeMenu) {
+        return meta.activeMenu;
+      }
+      return path;
+    },
   },
   methods: {
     handleOpen(key, keyPath) {

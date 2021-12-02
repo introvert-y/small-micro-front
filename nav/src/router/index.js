@@ -3,7 +3,19 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [{ path: "/", exact: true, redirect: "/app1" }];
+const routes = [
+  { 
+    path: "/",
+    exact: true,
+    redirect: "/app1",
+  },
+  { 
+    path: "/app1#",
+  },
+  { 
+    path: "/app2#",
+  },
+];
 
 const router = new VueRouter({
   mode: "history",
